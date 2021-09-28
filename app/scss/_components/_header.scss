@@ -1,0 +1,142 @@
+header{
+	background: #fff;
+	padding: 16px 0;
+
+	.general-conteiner{
+		display: flex;
+		justify-content: space-between;
+		align-items: flex-end;
+	}
+}
+.header__logo{
+	display: block;
+	width: 170px;
+
+	img{
+		width: 100%;
+		display: block;
+	}
+}
+.header__nav{
+	ul{
+		display: flex;
+
+		li{
+			font-size: 14px;
+			margin-left: 20px;
+			border-bottom: 1px solid $mainBgColor;
+			transition: all ease 0.3s;
+
+			a{
+				color: $importantColor;
+			}
+
+			&:hover{
+				border-bottom: 1px solid $importantColor;
+				transition: all ease 0.3s;
+			}
+		}
+	}
+}
+.burger-meny{
+	display: none;
+}
+.header__nav-mobile{
+	display: none;
+}
+@media only screen and (max-width: 700px){
+header{
+	z-index: 1000;
+	position: fixed;
+	width: 100%;
+	top: 0;
+	padding: 0;
+	.general-conteiner{
+		position: relative;
+		justify-content: center;
+		align-items: center;
+		flex-wrap: wrap;
+		padding: 16px;
+	}
+}
+.burger-meny{
+	display: flex;
+	position: absolute;
+	right: 16px;
+	top: 30px;
+	width: 26px;
+	height: 22px;
+	display: flex;
+	justify-content: center;
+	align-items: center;
+
+	span{
+		position: absolute;
+		width: 26px;
+		height: 4px;
+		border-radius: 1px;
+		background: $importantColor;
+		display: block;
+		transition: all ease 0.3s;
+	}
+}
+.burger-meny__el1{
+	top: 0;
+}
+.burger-meny__el3{
+	bottom: 0;
+}
+.burger-meny_activ{
+	.burger-meny__el1{
+		top: calc(50% - 2px);
+		transform: rotate(45deg);
+	}
+	.burger-meny__el2{
+		opacity: 0;
+	}
+	.burger-meny__el3{
+		bottom: calc(50% - 2px);
+		transform: rotate(-45deg);
+	}
+}
+.header__nav{
+	display: none;
+}
+.header__nav-mobile{
+	display: none;
+	width: 100%;
+
+	ul{
+		display: block;
+		padding-top: 16px;
+		padding-bottom: 0;
+		li{
+			width: 100%;
+			margin: 0;
+			border-bottom: solid 1px #282727;
+
+			&:hover{
+				border-bottom: none;
+			}
+
+			a{
+				width: 100%;
+				display: block;
+				padding: 24px 0;
+				text-align: center;
+				background: $mainBgColor;
+				color: #282727;
+				text-decoration: none;
+			}
+		}
+		.activ-nav{
+			
+				a{
+					background: #282727;
+					color: $importantColor;
+			
+			}
+		}
+	}
+}
+}
